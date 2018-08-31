@@ -14,6 +14,5 @@ before_script:
   - sudo snap install snapcraft --channel edge/bases --classic
 
 script:
-  - SNAPCRAFT_ENABLE_KVM=yes SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft version
-  - SNAPCRAFT_ENABLE_KVM=yes SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft --debug
-
+  - SNAPCRAFT_ENABLE_KVM=no SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft version
+  - SNAPCRAFT_ENABLE_KVM=no SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft --debug
