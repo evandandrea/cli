@@ -1,0 +1,19 @@
+git:
+  depth: 1
+
+language: shell
+dist: xenial
+sudo: required
+
+addons:
+  apt:
+    update: true
+
+before_script:
+  - sudo apt-get install -y cloud-image-utils qemu-system-x86 qemu-utils snapd
+  - sudo snap install snapcraft --channel edge/bases --classic
+
+script:
+  - SNAPCRAFT_ENABLE_KVM=yes SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft version
+  - SNAPCRAFT_ENABLE_KVM=yes SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft --debug
+

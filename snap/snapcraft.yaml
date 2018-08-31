@@ -1,9 +1,10 @@
-name: heroku
+name: heroku-ev
 version: git
 summary: Heroku CLI
 description: Heroku CLI
 grade: stable
-confinement: classic
+confinement: strict
+base: core18
 
 apps:
   heroku:
