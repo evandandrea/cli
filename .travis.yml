@@ -12,4 +12,5 @@ before_script:
 
 script:
   - SNAPCRAFT_ENABLE_KVM=no SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft version
-  - SNAPCRAFT_ENABLE_KVM=no SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft --debug
+  - SNAPCRAFT_ENABLE_SILENT_REPORT=yes SNAPCRAFT_ENABLE_KVM=no SNAPCRAFT_BUILD_ENVIRONMENT=qemu /snap/bin/snapcraft --debug
+  - cat /tmp/*/trace.txt
